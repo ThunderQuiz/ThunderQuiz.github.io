@@ -66,11 +66,13 @@ function generateQuestion(id){
     .then(response => response.text())
     .then(data => {
         const lines = data.split("\n");
+        
 
-        var random = Math.floor(Math.random() * lines.length / 4) * 2;
+        var random = Math.floor(Math.random() * lines.length / 2) * 2;
         while(random==previous){
-            random = Math.floor(Math.random() * lines.length / 4) * 2;
+            random = Math.floor(Math.random() * lines.length / 2) * 2;
         }
+        console.log(random);
         previous = random;
         correct = Math.floor(Math.random() * 4);
 
@@ -80,7 +82,8 @@ function generateQuestion(id){
         question.innerHTML = domanda;
         for(i=0; i<4; i++){
             if(i==correct) options[i].innerHTML = answer;
-            else options[i].innerHTML = (Math.floor(Math.random() * 100) + parseInt(answer));
+            else options[i].innerHTML = ((Math.floor(Math.random() * 150) - 75) + parseInt(answer));
+            if(options[i].innerHTML == answer && i != correct) options[i].innerHTML = options[i].innerHTML+1;
         }
         
     });
