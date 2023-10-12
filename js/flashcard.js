@@ -3,12 +3,12 @@ var quiz = document.getElementsByClassName("quiz");
 
 var correctCounter = 0;
 var wrongCounter = 0;
+var previous = 0;
 var correctSpan = document.getElementsByClassName("correct")[0];
 var wrongSpan = document.getElementsByClassName("wrong")[0];
 
 var question = document.getElementById("domanda");
 var options = [];
-var alreadyDid = [];
 for(i=0; i<4; i++){
     var name = "option-" + (i+1);
     options[i] = document.getElementById(name);
@@ -68,7 +68,10 @@ function generateQuestion(id){
         const lines = data.split("\n");
 
         var random = Math.floor(Math.random() * lines.length / 4) * 2;
-        alreadyDid.push(random);
+        while(random==previous){
+            random = Math.floor(Math.random() * lines.length / 4) * 2;
+        }
+        previous = random;
         correct = Math.floor(Math.random() * 4);
 
         var domanda = lines[random];
