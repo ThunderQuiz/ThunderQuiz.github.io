@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThunderQuiz | Flashcard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body style="background-image: radial-gradient(rgba(128, 128, 128, 0.235) 1px, transparent 0);background-size: 40px 40px;">
+    <header>
+        <nav>
+            <a href="/">ThunderQuiz</a>
+            <div style="float:Right;">
+                <a href="Flashcard.html">Flashcard</a>
+                <a>Esercizi</a>
+                <a>Mappe Interattive</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div onclick="load()" class="card" style="background-image: url('../img/Flashcard/date-storia.jpg');">Date Storia</div>
+            <div class="card" style="background-image: url('../img/Flashcard/letteratura.jpg');">Opere Letteratura</div>
+            <div class="card">TCP/Ip</div>
+            <div class="card">Funzioni Matematiche</div>
+            <div class="card">Funzioni Matematiche</div>
+            <div class="card">Funzioni Matematiche</div>
+            <div class="card">Funzioni Matematiche</div>
+            <div class="card">Funzioni Matematiche</div>
+            <div class="card"></div>
+        </div>
+        <div class="quiz-dialog">
+            <div class="quiz" style="display: none;">
+                <h2 id="domanda">Data della Pace di Westfalia</h2>
+                <div class="opzioni">
+                    <button id="option-1">1648</button>
+                    <button id="option-2">1523</button>
+                    <button id="option-3">1264</button>
+                    <button id="option-4">1538</button>
+                </div>
+                <h3>Corrette:<span class="correct"></span></h3>
+                <h3>Sbagliate:<span class="wrong"></span></h3>
+            </div>
+        </div>
+    </main>
+    <script src="../js/flashcard.js"></script>
+    <footer>
+        <footer>
+            © zSharpFire 2023<br>Twitter | Instagram | Telegram
+        </footer>
+    </footer>
+</body>
+</html>
