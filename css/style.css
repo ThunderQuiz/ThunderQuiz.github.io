@@ -148,8 +148,8 @@ footer{
 
 .quiz{
     animation: fade-in 1000ms forwards;
-    height: 60%;
-    width: 60%;
+    min-height: 60%;
+    min-width: 60%;
     margin: auto;
 }
 .quiz h2{
@@ -199,6 +199,9 @@ footer{
     }
 }
 @media screen and (max-width:430px){
+    .opzioni{
+        margin-top: 50px;
+    }
     .hamburger{
         display: block;
     }
