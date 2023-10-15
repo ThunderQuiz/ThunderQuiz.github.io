@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThunderQuiz | Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/icons/favicon.png" type="image/x-icon">
 </head>
 
 <body>
     <header>
         <nav>
-            <a class="hamburger" onclick="alert('boom')"></a>
+            <img class="hamburger" onclick="hamburger();">
             <a href="/">ThunderQuiz</a>
             <div style="float:Right;">
                 <a href="Flashcard/">Flashcard</a>
                 <a>Esercizi</a>
                 <a>Mappe Interattive</a>
-            </div>
+            </div>  
         </nav>
+        <div class="menu">
+            <a href="Flashcard/">Flashcard</a>
+            <a>Esercizi</a>
+            <a>Mappe Interattive</a>
+        </div>
     </header>
     <main>
         <div class="home">
@@ -61,6 +67,9 @@
     <script>
         window.addEventListener('scroll', reveal);
 
+        var menu = document.getElementsByClassName('menu')[0];
+        var open = false;
+
         function reveal() {
             var reveals = document.querySelectorAll('.reveal');
 
@@ -75,6 +84,16 @@
                 else {
                     reveals[i].classList.remove('active');
                 }
+            }
+        }
+        function hamburger(){
+            if(!open){
+                open = true;
+                menu.classList.add("open");
+            }
+            else{
+                open = false;
+                menu.classList.remove("open");
             }
         }
     </script>
