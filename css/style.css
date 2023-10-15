@@ -235,7 +235,7 @@ footer a{
         display: inline-block;
     }
     main{
-        min-height: 600px;
+        min-height: 100%;
     }
 }
 
