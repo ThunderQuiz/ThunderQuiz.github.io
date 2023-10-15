@@ -18,7 +18,7 @@ body{
 }
 
 nav{
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     width: 100%;
     height: 65px;
@@ -125,14 +125,14 @@ footer a{
     width: 75%;
     margin: auto;
     display: flex;
-    padding: 60px;
+    padding-top: 60px;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 .card{
     cursor: pointer;
     font-weight: bold;
-    transition: transform 0.2s;
+    transition: all 0.2s;
     margin: 30px;
     min-width: 300px;
     font-size: 25px;
@@ -146,8 +146,9 @@ footer a{
     background-blend-mode:multiply;
 }
 .card:hover{
-    transition: transform 0.2s;
+    transition: all 0.2s;
     transform: translateY(-5%);
+    border: 4px solid rgb(111, 0, 255);
 }
 
 .quiz{
@@ -201,15 +202,15 @@ footer a{
         width: 100%;
         min-height: 100%;
     }
+    .hamburger{
+        display: block;
+    }
 }
 @media screen and (max-width:430px){
     .opzioni{
         margin-top: 50px;
         width: 300px;
         margin: auto;
-    }
-    .hamburger{
-        display: block;
     }
     .about{
         padding: 15px;
@@ -233,8 +234,8 @@ footer a{
     h3{
         display: inline-block;
     }
-    body{
-        min-height: 900px;
+    main{
+        min-height: 600px;
     }
 }
 
@@ -255,5 +256,27 @@ footer a{
 .reveal.active{
     transform: translateY(0px);
     color: white;
+}
+.menu{
+    transition: height 0.75s, font-size 0.75s;
+    height: 0;
+    font-size: 0;
+}
+.open a{
+    margin: 30px;
+    border-bottom: 2px solid gray;
+}
+.open{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding-top: 100px;
+    transition: height 0.75s, font-size 0.75s;
+    height: 100%;
+    font-size: 30px;
+    width: 100%;
+    position: fixed;
+    background-color: #11082b;
+    z-index: 1;
 }
 
