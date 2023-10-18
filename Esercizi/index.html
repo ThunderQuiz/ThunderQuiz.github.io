@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThunderQuiz | Esercizi</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/icons/favicon.png" type="image/x-icon">
+</head>
+<body style="background-image: radial-gradient(rgba(128, 128, 128, 0.235) 1px, transparent 0);background-size: 40px 40px;">
+    <header>
+        <nav>
+            <img class="hamburger" onclick="hamburger();">
+            <a href="/">ThunderQuiz</a>
+            <div style="float:Right;">
+                <a href="/Flashcard">Flashcard</a>
+                <a href="/Esercizi">Esercizi</a>
+                <a>Mappe Interattive</a>
+            </div>
+        </nav>
+        <div class="menu">
+            <a href="/Flashcard">Flashcard</a>
+            <a href="/Esercizi">Esercizi</a>
+            <a>Mappe Interattive</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="section">Code Debugging</div>
+            <div class="section">Funzioni Matematiche</div>
+            <div class="section">CSS Replication</div>
+            <div class="section">Analisi artistica</div>
+            <div class="section">Date Storia</div>
+            <div class="section"></div>
+            <div class="section"></div>
+            <div class="section"></div>
+        </div>
+        <div class="quiz-dialog">
+            <div class="quiz" style="display: none;">
+                <h2 id="domanda">Data della Pace di Westfalia</h2>
+                <div class="opzioni">
+                    <button id="option-1">1648</button>
+                    <button id="option-2">1523</button>
+                    <button id="option-3">1264</button>
+                    <button id="option-4">1538</button>
+                </div>
+                <div>
+                <h3>Corrette:<span class="correct"></span></h3><br>
+                <h3>Sbagliate:<span class="wrong"></span></h3></div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/flashcard.js"></script>
+    <footer>
+        © zSharpFire 2023<br><a href="https://twitter.com/zSharpFire" target="_blank">Twitter</a> | <a target="_blank" href="https://www.instagram.com/zsharpfire/">Instagram</a> | <a></a>Telegram
+    </footer>
+    <script>
+        var menu = document.getElementsByClassName('menu')[0];
+        var open = false;
+
+        function hamburger(){
+            if(!open){
+                open = true;
+                menu.classList.add("open");
+            }
+            else{
+                open = false;
+                menu.classList.remove("open");
+            }
+        }
+    </script>
+</body>
+</html>
