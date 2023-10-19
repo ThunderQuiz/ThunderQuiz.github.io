@@ -54,7 +54,9 @@ function load(section){
             break;
 
         case "Opere letteratura":
-            alert("Carico letteratura");
+            cards[0].parentElement.style.display = "none";
+            quiz[0].style.display = "block";
+            generateData(2);
             break;
 
     }
@@ -72,7 +74,6 @@ function generateQuestion(id){
         while(random==previous){
             random = Math.floor(Math.random() * lines.length / 2) * 2;
         }
-        console.log(random);
         previous = random;
         correct = Math.floor(Math.random() * 4);
 
@@ -91,6 +92,26 @@ function generateQuestion(id){
     
 }
 
+function generateData(id){
+    switch(id){
+        case 2:
+            actualId = 2;
+            var opera = operaLetteratura();
+            var domanda = "Autore di '" + opera[0] + "'?"; 
+            question.innerHTML = domanda;
+
+            var poeti = getPoeta();
+
+            correct = Math.floor(Math.random() * 4);
+            for(i=0; i<4; i++){
+                if(i==correct) options[i].innerHTML = opera[1];
+                else options[i].innerHTML = poeti[Math.floor(Math.random() * poeti.length-1)];
+                if(options[i].innerHTML == opera[1] && i != correct) options[i].innerHTML = options[i].innerHTML+1;
+            }
+
+            break;
+    }
+}
 
 function getFileUrl(id){
     switch(id){
@@ -114,5 +135,18 @@ function checkAnswer(option){
     window.setTimeout(function(){
         quiz[0].style.display = "block"}
         ,20);
-    generateQuestion(actualId);
+
+    continua(actualId);
+}
+
+function continua(id){
+    switch(id){
+        case 1:
+            generateQuestion(id);
+            break;
+
+        case 2:
+            generateData(id);
+            break;
+    }
 }
