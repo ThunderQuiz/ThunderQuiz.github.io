@@ -233,6 +233,9 @@ footer a{
     .card{
         line-height: 200px;
     }
+    .container{
+        width: 100%;
+    }
     h3{
         display: inline-block;
     }
