@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="img/icons/favicon.png" type="image/x-icon">
 </head>
 
-<body>
+<body onload="motd()">
     <header>
         <nav>
             <img class="hamburger" onclick="hamburger();">
@@ -36,8 +36,8 @@
                 <h1>
                     ThunderQuiz
                 </h1>
-                <h2>
-                    La cosa più epica al mondo dopo la carta igienica
+                <h2 id="motd" >
+                    La cosa più epica al mondo dopo 
                 </h2>
             </div>
         </div>
@@ -95,6 +95,12 @@
                 open = false;
                 menu.classList.remove("open");
             }
+        }
+
+        function motd(){
+            var h2 = document.getElementById("motd");
+            var frasi = ["la carta igienica", "il formaggio", "fortnite", "l'invenzione del cavallo", "il regno di Napoleone", "gli appartamenti a 30 euro di Milano"]
+            h2.innerHTML = h2.innerHTML + frasi[Math.floor(Math.random() * frasi.length)];
         }
     </script>
 </body>
