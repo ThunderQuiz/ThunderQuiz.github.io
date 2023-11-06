@@ -242,6 +242,9 @@ footer a{
     main{
         min-height: 600px;
     }
+    .opzioni button:hover{
+        transform: translateY(0%);
+    }
 }
 
 .correct{
