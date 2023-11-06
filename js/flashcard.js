@@ -84,7 +84,7 @@ function generateQuestion(id){
         for(i=0; i<4; i++){
             if(i==correct) options[i].innerHTML = answer;
             else options[i].innerHTML = ((Math.floor(Math.random() * 150) - 75) + parseInt(answer));
-            if(options[i].innerHTML == answer && i != correct) options[i].innerHTML = options[i].innerHTML+1;
+            while(options[i].innerHTML == answer && i != correct) options[i].innerHTML = ((Math.floor(Math.random() * 150) - 75) + parseInt(answer));
         }
         
     });
@@ -122,26 +122,47 @@ function getFileUrl(id){
     return null;
 }
 
+function wrong(){
+    for(var i=0 ; i<4; i++){
+        if(i != correct) options[i].style.backgroundColor = "red";;
+    }
+    correct = -1;
+    window.setTimeout(function(){
+        document.addEventListener("click", waitClick())
+        }
+        ,1500);
+    
+}
+
+function waitClick(){
+    if(correct == -1) continua(actualId);
+}
+
 function checkAnswer(option){
+    if(correct == -1) return;
     if(option==correct){
         correctCounter++;
         correctSpan.innerHTML = correctCounter;
+        continua(actualId);
     } 
     else{
         wrongCounter++;
         wrongSpan.innerHTML = wrongCounter;
+        wrong();
     }
-    quiz[0].style.display = "none";
-    window.setTimeout(function(){
-        quiz[0].style.display = "block"}
-        ,20);
-
-    continua(actualId);
 }
 
 function continua(id){
+    quiz[0].style.display = "none";
+    //document.removeEventListener("click", waitClick());
+    window.setTimeout(function(){
+        quiz[0].style.display = "block"}
+        ,20);
     switch(id){
         case 1:
+            for(var i=0 ; i<4; i++){
+                options[i].style.backgroundColor = "lime";
+            }
             generateQuestion(id);
             break;
 
